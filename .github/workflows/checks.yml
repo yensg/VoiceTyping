@@ -1,0 +1,20 @@
+name: Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build native app
+        run: swift build --product LocalDictation
+      - name: Check policies and worker lifecycle
+        run: |
+          swift run PolicyChecks
+          swift run WorkerChecks
+      - name: Check build and scoring utilities
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
