@@ -4,6 +4,28 @@ Free, local dictation for macOS. Hold **Right Option**, speak, and release to in
 
 Built with Swift/AppKit and a pinned whisper.cpp engine running Whisper large-v3-turbo locally. No MacWhisper dependency, account, paid transcription API, or usage quota. This is an early source release, not a notarized installer.
 
+## Interface
+
+Native app views rendered from the current source with preview data; no personal recordings or transcripts are shown.
+
+### Dictation
+
+Hold Right Option, speak, and release to insert into your focused input.
+
+![VoiceTyping Dictation screen with Right Option instructions and latest draft area](docs/images/dictation.png)
+
+### Settings
+
+Choose your shortcut and language, add vocabulary hints, and manage permissions.
+
+![VoiceTyping Settings screen with shortcut, language, vocabulary and permissions](docs/images/settings.png)
+
+### Voice test · dark mode
+
+Record a local comparison sample or preview the recording indicator.
+
+![VoiceTyping Voice test screen in dark mode with Record, Cancel and Preview controls](docs/images/voice-test-dark.png)
+
 ## Requirements
 
 - Apple Silicon Mac. Package deployment target: macOS 14; older supported OS versions have not all been tested.
